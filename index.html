@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Invoice Generator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mock Invoice Generator</h1>
+            <p class="subtitle">Generate realistic-looking invoices for popular SaaS services</p>
+            <div class="disclaimer">
+                ⚠️ For entertainment purposes only. Do not use for fraudulent activities.
+            </div>
+        </header>
+
+        <main>
+            <div class="generator-container">
+                <div class="form-section">
+                    <h2>Invoice Details</h2>
+
+                    <div class="form-group">
+                        <label for="service">Service Provider</label>
+                        <select id="service">
+                            <option value="anthropic">Anthropic (Claude API)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="documentType">Document Type</label>
+                        <select id="documentType">
+                            <option value="invoice">Invoice</option>
+                            <option value="receipt">Receipt</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Amount (USD)</label>
+                            <input type="number" id="amount" value="200" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="planType">Plan Type</label>
+                        <select id="planType">
+                            <option value="max-20x">Max plan - 20x</option>
+                            <option value="max-10x">Max plan - 10x</option>
+                            <option value="pro">Pro plan</option>
+                            <option value="team">Team plan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issueDate">Issue Date</label>
+                            <input type="date" id="issueDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" id="dueDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod">
+                            <option value="Mastercard">Mastercard</option>
+                            <option value="Visa">Visa</option>
+                            <option value="American Express">American Express</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardLast4">Card Last 4 Digits</label>
+                        <input type="text" id="cardLast4" maxlength="4" pattern="\d{4}" value="5141">
+                    </div>
+
+                    <h3>Billing Information</h3>
+
+                    <div class="form-group">
+                        <label for="billToName">Bill To Name/Organization</label>
+                        <input type="text" id="billToName" value="My Organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="billToEmail">Email</label>
+                        <input type="email" id="billToEmail" value="email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="billToAddress">Street Address</label>
+                        <input type="text" id="billToAddress" value="123 Main Street">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="billToCity">City</label>
+                            <input type="text" id="billToCity" value="San Francisco">
+                        </div>
+                        <div class="form-group">
+                            <label for="billToState">State/Province</label>
+                            <input type="text" id="billToState" value="CA">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="billToZip">ZIP/Postal Code</label>
+                            <input type="text" id="billToZip" value="94102">
+                        </div>
+                        <div class="form-group">
+                            <label for="billToCountry">Country</label>
+                            <input type="text" id="billToCountry" value="United States">
+                        </div>
+                    </div>
+
+                    <button id="generateBtn" class="btn-primary">Generate Invoice</button>
+                </div>
+
+                <div class="preview-section">
+                    <h2>Preview</h2>
+                    <div id="preview" class="invoice-preview">
+                        <p class="preview-placeholder">Configure your invoice details and click "Generate Invoice" to see a preview.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Mock Invoice Generator | Open Source | <a href="https://github.com/yourusername/mock-invoice-generator" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="src/templates/anthropic.js"></script>
+    <script src="src/generator.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>
