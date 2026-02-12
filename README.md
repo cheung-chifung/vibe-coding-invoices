@@ -27,6 +27,10 @@ By using this tool, you acknowledge that you understand and accept full responsi
 - Anthropic (Claude API)
 - More coming soon...
 
+## Screenshot
+
+![Mock Invoice Generator Demo](screenshots/demo.png)
+
 ## Usage
 
 1. Open `index.html` in your web browser
