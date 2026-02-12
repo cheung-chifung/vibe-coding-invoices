@@ -19,7 +19,7 @@ By using this tool, you acknowledge that you understand and accept full responsi
 - 🎨 **Multiple Templates**: Support for various popular SaaS services
 - 💰 **Customizable**: Adjust prices, dates, service tiers, and billing information
 - 📱 **Client-Side Only**: No server required - everything runs in your browser
-- 📄 **PDF Export**: Download professional-looking PDF invoices
+- 📄 **PDF Export**: Use browser's native print-to-PDF for perfect consistency
 - 🔒 **Privacy First**: All data stays in your browser, nothing is sent to any server
 
 ## Supported Services
@@ -36,7 +36,10 @@ By using this tool, you acknowledge that you understand and accept full responsi
 1. Open `index.html` in your web browser
 2. Select a service template
 3. Customize the invoice details (amount, date, plan, etc.)
-4. Generate and download your mock invoice
+4. Click "Generate Invoice" to preview
+5. Click "Print / Save as PDF" to export
+   - Select "Save as PDF" in the print dialog (Mac/Windows)
+   - The PDF will match the preview exactly
 
 ## Development
 
@@ -44,9 +47,9 @@ This is a pure client-side application built with:
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- [html2pdf.js](https://github.com/eKoopmans/html2pdf.js) for PDF generation
+- Browser native print API for PDF generation
 
-No build process or dependencies required - just open `index.html` in a browser!
+No build process, no dependencies, no external libraries - just open `index.html` in a browser!
 
 ## Contributing
 
